@@ -1,6 +1,5 @@
 <h1 align="center">
-  Monster Fly  <img align='center' width='40px' height='40px' src='https://github.com/giovanibaldan/monsterFly/assets/47829957/264f4e30-67b3-4c99-be9c-27fb1b31894c'/>
-
+  Monster Fly  <img align='center' width='40px' height='40px' src='https://github.com/giovanibaldan/monsterFly/assets/47829957/02c0a3c0-915e-4e99-b7e6-b9cfd713b0d4'/>
 </h1>
 <br>
 <h3 align="left">
@@ -13,10 +12,10 @@ Desenvolvimento de um projeto de jogo inspirado em Flappy Bird, utilizando apena
   Como o jogo funciona:
 </h4>
 
-[Monster Fly](https://github.com/giovanibaldan/monsterFly/tree/main) é um jogo simples e viciante onde um monstro é constantemente puxado para baixo, e a ação do usuário ao pressionar qualquer tecla ou clicar no mouse o faz subir. Este movimento básico é desafiado conforme você precisa guiar o monstro através dos obstáculos sem colidir com eles.
+[Monster Fly](https://github.com/giovanibaldan/monsterFly/tree/main) é um jogo simples e viciante onde você controla um monstro constantemente puxado para baixo. Através da ação do usuário ao pressionar qualquer tecla ou clicar no mouse, o monstro sobe, desafiando suas habilidades de desviar dos obstáculos sem colidir com eles.
 
-A mecânica do jogo se baseia em: o monstro é constantemente atraído para baixo, e pressionar qualquer tecla ou clicar no mouse faz com que ele suba. Você pode pressionar rapidamente para fazê-lo subir mais, mas deve ter cuidado para não perder o controle.
+O funcionamento do jogo é bastante direto: o monstro é sempre atraído para baixo, e a cada pressionamento de tecla ou clique do mouse, ele sobe. Você pode apertar repetidamente para fazê-lo subir mais, mas deve ter cuidado para não perder o controle.
 
-Obstáculos azuis aparecerão em diversas alturas, e seu objetivo é desviar deles. Cada vez que passar por um obstáculo, você ganha 1 ponto. Embora a maioria dos obstáculos seja fácil de ultrapassar, ocasionalmente haverá uma mudança mais difícil, como sair de um obstáculo no topo para um bem mais baixo, ou vice-versa. Deixar o monstro cair para passar por um obstáculo mais baixo pode ser mais desafiador do que subir para passar por um obstáculo mais alto.
+O jogo apresenta obstáculos azuis em variadas alturas. Seu objetivo é simples: desviar deles. Cada obstáculo ultrapassado vale 1 ponto. A maioria dos obstáculos é fácil de contornar, mas alguns apresentam desafios maiores, como transições bruscas de obstáculos altos para baixos ou vice-versa. Deixar o monstro cair para passar por um obstáculo mais baixo pode ser mais desafiador do que subir para passar por um mais alto.
 
-No fim do jogo, uma tela de "Game Over" aparecerá, mostrando a sua pontuação e um botão para jogar novamente.
+Ao final do jogo, uma tela de "Game Over" aparecerá, mostrando sua pontuação e oferecendo um botão para jogar novamente.
