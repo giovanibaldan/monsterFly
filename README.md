@@ -37,3 +37,21 @@ Ao final do jogo, uma tela de "Game Over" aparecerá, mostrando sua pontuação 
             <pre><b>CSS</b></pre>
         </td>
   </table>
+
+<h3 align="left">Artes utilizadas:</h3>
+   <table >
+       <td align="center">
+            <img src="https://github.com/giovanibaldan/monsterFly/assets/47829957/02c0a3c0-915e-4e99-b7e6-b9cfd713b0d4" width="65px" alt="C icon" /><br>
+            <pre><b>Monstro animado</b></pre>
+        </td>
+       <td align="center">
+            <img src="https://github.com/giovanibaldan/monsterFly/assets/47829957/5d1f3f5d-d2d2-4bda-af5f-00c263296cb7" width="65px" alt="C icon" /><br>
+            <pre><b>Monstro estático</b></pre>
+        </td>
+  </table>
+
+<h3 align="left">Demonstração do jogo:</h3>
+<img src="https://github.com/giovanibaldan/monsterFly/assets/47829957/c7f601cf-7d6f-41f5-9fa8-74271588ef0c"/>
+
+<h3 align="left">Demonstração da tela de fim de jogo:</h3>
+<img src="https://github.com/giovanibaldan/monsterFly/assets/47829957/db8bb237-10eb-4cb7-87df-e47ff6b95e80"/>
