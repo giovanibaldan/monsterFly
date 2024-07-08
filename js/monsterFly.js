@@ -77,11 +77,13 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
     }
 }
 
-function Monstro(alturaJogo) {
+function Jogo(alturaJogo) {
     let voando = false
+    let posY = alturaJogo / 2 // Posição inicial do monstro
+    let velocidadeY = 0 // Velocidade inicial do movimento
 
     this.elemento = novoElemento('img', 'eye-purple')
-    this.elemento.src = 'imgs/eye-purple.png'
+    this.elemento.src = 'imgs/eye-purple.gif'
 
     this.getY = () => parseInt(this.elemento.style.bottom.split('px')[0])
     this.setY = y => this.elemento.style.bottom = `${y}px`
@@ -92,16 +94,26 @@ function Monstro(alturaJogo) {
     window.onmouseup = () => voando = false;
 
     this.animar = () => {
-        const novoY = this.getY() + (voando ? 8.5 : -7)
         const alturaMaxima = alturaJogo - this.elemento.clientHeight
 
-        if (novoY <= 0) {
-            this.setY(0)
-        } else if (novoY >= alturaMaxima) {
-            this.setY(alturaMaxima)
+        if (voando) {
+            velocidadeY += 0.45
         } else {
-            this.setY(novoY)
+            velocidadeY -= 0.35
         }
+
+        let novoY = posY + velocidadeY
+
+        if (novoY <= 0) {
+            novoY = 0
+            velocidadeY = 0 // Continue a se mover, mas não ultrapasse a borda
+        } else if (novoY >= alturaMaxima) {
+            novoY = alturaMaxima
+            velocidadeY = 0 // Continue a se mover, mas não ultrapasse a borda
+        }
+
+        posY = novoY
+        this.setY(posY)
     }
 
     this.setY(alturaJogo / 2)
@@ -126,18 +138,19 @@ function estaoSobrepostos(elementoA, elementoB) {
     return horizontal && vertical
 }
 
-function colidiu(passaro, barreiras) {
+function colidiu(monstro, barreiras) {
     let colidiu = false
     barreiras.pares.forEach(parDeBarreiras => {
         if (!colidiu) {
             const superior = parDeBarreiras.superior.elemento
             const inferior = parDeBarreiras.inferior.elemento
-            colidiu = estaoSobrepostos(passaro.elemento, superior)
-                || estaoSobrepostos(passaro.elemento, inferior)
+            colidiu = estaoSobrepostos(monstro.elemento, superior)
+                || estaoSobrepostos(monstro.elemento, inferior)
         }
     })
     return colidiu
 }
+
 
 function MonsterFly() {
     let pontos = 0
@@ -149,10 +162,10 @@ function MonsterFly() {
     const progresso = new Progresso()
     const barreiras = new Barreiras(altura, largura, 230, 400,
         () => progresso.atualizarPontos(++pontos))
-    const passaro = new Monstro(altura)
+    const monstro = new Jogo(altura)
 
     areaDoJogo.appendChild(progresso.elemento)
-    areaDoJogo.appendChild(passaro.elemento)
+    areaDoJogo.appendChild(monstro.elemento)
     barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
 
@@ -172,13 +185,14 @@ function MonsterFly() {
         // jogarNovamente.addEventListener('click', reload())
         const temporizador = setInterval(() => {
             barreiras.animar()
-            passaro.animar()
+            monstro.animar()
 
             // condição para GAME OVER
-            if (colidiu(passaro, barreiras)) {
+            if (colidiu(monstro, barreiras)) {
                 clearInterval(temporizador)
                 telaFinalPontos.innerHTML = pontos;
                 telaFinal.style.display = "block"
+                monstro.elemento.src = 'imgs/eye-purple.png'
                 const audioFim = new Audio('sounds/fim.mp3');
                 audioFim.addEventListener('canplaythrough', function () {
                     audioFim.play();
